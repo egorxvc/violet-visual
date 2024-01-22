@@ -1,6 +1,7 @@
 import {Canvas} from "@react-three/fiber";
 import {Environment, Scroll, ScrollControls} from "@react-three/drei";
 import {Interface} from "./Interface/index.jsx";
+import {Balloons} from "./Balloons/index.jsx";
 
 export default function Main() {
     return (
@@ -11,7 +12,7 @@ export default function Main() {
             >
                 {/*<color args={['rgba(0,0,0,1)']}/>*/}
                 <ScrollControls pages={7} damping={0.3} distance={0.8}>
-                    {/*<Model mouse={smoothMouse} />*/}
+                    <Balloons/>
                     <Scroll html>
                         <Interface />
                     </Scroll>
