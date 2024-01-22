@@ -10,22 +10,22 @@ export const BloggersSection = () => {
       </h2>
       <div className="grid grid-cols-2 grid-rows-2 gap-y-10 my-20">
         <BloggerCard
-          imgSrc="/medias/blogger1.png"
+          imgSrc="/violet-visual/medias/blogger1.png"
           name="tatoshe4ka"
           count="2.2 Млн"
         />
         <BloggerCard
-          imgSrc="/medias/blogger2.png"
+          imgSrc="/violet-visual/medias/blogger2.png"
           name="evgeniya.khudyakova"
           count="1.7 Млн"
         />
         <BloggerCard
-          imgSrc="/medias/blogger3.png"
+          imgSrc="/violet-visual/medias/blogger3.png"
           name="_fenik_"
           count="357 Тыс"
         />
         <BloggerCard
-          imgSrc="/medias/blogger4.png"
+          imgSrc="/violet-visual/medias/blogger4.png"
           name="yanains"
           count="185 Тыс"
         />
