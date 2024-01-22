@@ -28,14 +28,14 @@ export const ServiceSection = () => {
 
 export const ServiceCard = ({ title, children }) => {
   return (
-      <>
-        <div className="flex-1 border px-6 py-9 pb-0 min-h-0 backdrop-blur-md bg-white bg-opacity-25">
-          <h3 className="text-3xl mb-6">{title}</h3>
-          <p className="mb-auto flex">{children}</p>
-          <a href="#" className="mb-6 mt-6 block">
-            Связь
-          </a>
-        </div>
-      </>
+    <>
+      <div className="flex-1 border px-6 py-9 pb-0 min-h-0 backdrop-blur-md bg-white bg-opacity-25">
+        <h3 className="text-3xl mb-6">{title}</h3>
+        <p className="mb-auto flex">{children}</p>
+        <a href="#" className="mb-6 mt-6 block">
+          Связь
+        </a>
+      </div>
+    </>
   );
 };

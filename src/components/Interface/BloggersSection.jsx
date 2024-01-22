@@ -1,5 +1,3 @@
-import {Picture} from "astro:assets";
-
 export const BloggersSection = () => {
   return (
     <div className="flex flex-col justify-center justify-items-center h-full w-full">
