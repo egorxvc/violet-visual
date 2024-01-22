@@ -5,8 +5,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["var(--font-montserrat)", ...defaultTheme.fontFamily.sans],
-				display: ["var(--font-gella-display)"],
+				sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+				display: ["GellaDisplay"],
 			},
 			colors: {
 				"infra-red": "#FF3F71",
