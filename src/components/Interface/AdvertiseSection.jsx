@@ -37,9 +37,9 @@ export const AdvertiseCard = ({ children, className }) => {
   return (
     <>
       <div
-        className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-white ${className}`}
+        className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black ${className}`}
       >
-        <p className="bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
+        <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
           {children}
         </p>
       </div>

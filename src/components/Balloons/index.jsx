@@ -1,17 +1,31 @@
-import { Float, useGLTF, useScroll } from "@react-three/drei";
+import {Environment, Float, useGLTF, useScroll} from "@react-three/drei";
 import { useTransform } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRef } from "react";
+import {useRef, useState} from "react";
 import * as THREE from "three";
 const rsqw = (t, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) =>
     (a / Math.atan(1 / delta)) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta);
 
 export const Balloons = ({ mouse }) => {
   const { nodes } = useGLTF("/violet-visual/medias/abc-balloon.glb");
+  const scroll = useScroll();
+  const [environmentValue, setEnvironmentValue] = useState('apartment');
+  const environmentRef = useRef();
+  useFrame(() => {
+    if (scroll.range(3/7, 4/7, -0.02) > 0) {
+      setEnvironmentValue('night');
+    }  else if (scroll.range(3/7, 0 ) > 0)  {
+      setEnvironmentValue('apartment');
+    }
 
+    if (scroll.range(5/7, 1, -0.010) > 0) {
+      setEnvironmentValue('apartment');
+    }
+  })
   return (
     <>
+      <Environment preset={environmentValue} />
       <group>
           <Mesh node={nodes.letterA} letter={'A'} mouse={mouse} />
           <Mesh node={nodes.letterN} letter={'N'} mouse={mouse} />
