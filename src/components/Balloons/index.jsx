@@ -9,23 +9,9 @@ const rsqw = (t, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) =>
 
 export const Balloons = ({ mouse }) => {
   const { nodes } = useGLTF("/violet-visual/medias/abc-balloon.glb");
-  const scroll = useScroll();
-  const [environmentValue, setEnvironmentValue] = useState('apartment');
-  const environmentRef = useRef();
-  useFrame(() => {
-    if (scroll.range(3/7, 4/7, -0.02) > 0) {
-      setEnvironmentValue('night');
-    }  else if (scroll.range(3/7, 0 ) > 0)  {
-      setEnvironmentValue('apartment');
-    }
-
-    if (scroll.range(5/7, 1, -0.010) > 0) {
-      setEnvironmentValue('apartment');
-    }
-  })
   return (
     <>
-      <Environment preset={environmentValue} />
+      <Environment preset={'apartment'} />
       <group>
           <Mesh node={nodes.letterA} letter={'A'} mouse={mouse} />
           <Mesh node={nodes.letterN} letter={'N'} mouse={mouse} />
