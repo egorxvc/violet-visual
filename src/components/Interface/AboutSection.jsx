@@ -31,7 +31,10 @@ const svgVariants = {
 export const AboutSection = () => {
   const paragraphContainer = useRef();
   const paragraphContainerControls = useAnimation();
-  const isInView = useInView(paragraphContainer, { once: true, margin: '-200px' });
+  const isInView = useInView(paragraphContainer, {
+    once: true,
+    margin: "-200px",
+  });
 
   useEffect(() => {
     if (isInView) {
@@ -48,16 +51,16 @@ export const AboutSection = () => {
         }}
         animate={paragraphContainerControls}
         initial="hidden"
-        transition={{ ease: "easeIn", duration: 0.3 }}
-        className="font-display flex flex-col  leading-[90px]"
+        transition={{ ease: "easeInOut", duration: 0.3 }}
+        className="font-display flex flex-col  leading-[90px] text-[108px]"
       >
-        <span className="text-[80px]">This Shit is</span>
-        <span className="text-[120px] uppercase">Premium</span>
+        <span>Projects</span>
+        <span>of any level</span>
       </motion.h2>
       <div className="flex self-end justify-end w-full relative">
         <motion.div
           ref={paragraphContainer}
-          className="max-w-2xl pt-32 mr-32"
+          className="max-w-2xl pt-32 mr-32 font-bold"
           variants={paragraphContainerVariants}
           initial="hidden"
           animate={paragraphContainerControls}
@@ -76,7 +79,7 @@ export const AboutSection = () => {
               ease: "easeInOut",
             }}
           >
-            Привет, мы Agency Agency - премиальное рекламное агентство.
+            Привет, мы Agency Agency – инфлюенс-маркетинговое агентство.
           </motion.p>
           <motion.p
             variants={paragraphVariants}
@@ -86,14 +89,14 @@ export const AboutSection = () => {
               ease: "easeIn",
             }}
           >
-            Мы специализируемся на создании и реализации комплексных
-            маркетинговых стратегий - от социальных медиа до создания
-            уникального контента и построения взаимодействия с целевой
-            аудиторией.
+            Мы специализируемся на работе с лидерами мнений, креаторами,
+            тематическми и авторскими каналами. Готовим и реализовываем инфлюенс
+            маркетинговые стратегии, которые помогают брендам достичь свою
+            аудиторию.
           </motion.p>
         </motion.div>
         <motion.svg
-          className="absolute right-0 -top-44 max-w-4xl"
+          className="absolute right-0 -top-32 max-w-[100%]"
           width="1039"
           height="629"
           viewBox="0 0 1039 629"
@@ -113,10 +116,6 @@ export const AboutSection = () => {
             }}
             d="M988.8 196.944C995.539 223.952 988.901 252.986 971.035 282.395C953.168 311.806 924.092 341.557 886.034 369.957C809.919 426.756 697.961 478.091 568.199 510.474C438.438 542.857 315.487 550.145 221.611 535.769C174.671 528.581 135.025 515.98 105.435 498.412C75.8459 480.845 56.3437 458.335 49.6037 431.327C42.8638 404.32 49.5027 375.286 67.3682 345.876C85.2351 316.465 114.311 286.714 152.37 258.314C228.484 201.515 340.443 150.181 470.204 117.798C599.966 85.4148 722.916 78.1262 816.793 92.5025C863.732 99.6908 903.378 112.292 932.969 129.86C962.557 147.426 982.06 169.937 988.8 196.944Z"
             stroke="#AFAFAF"
-          />
-          <path
-            d="M916.417 96L908.394 117.394L887 125.417L908.394 133.44L916.417 154.834L924.44 133.44L945.834 125.417L924.44 117.394L916.417 96Z"
-            fill="black"
           />
         </motion.svg>
       </div>
