@@ -17,6 +17,9 @@ export default {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        'extend': '0px 0px 0px 2px rgba(255, 64, 114, 1)',
+      }
     },
   },
   plugins: [],

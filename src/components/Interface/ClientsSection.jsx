@@ -1,3 +1,7 @@
+import {useScroll} from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
+import {useRef} from "react";
+
 export const ClientsSection = () => {
   return (
     <div className="flex flex-col justify-center justify-items-center h-full w-full">
