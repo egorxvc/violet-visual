@@ -1,5 +1,7 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import {useScroll} from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
 
 const paragraphContainerVariants = {
   hidden: {
@@ -45,13 +47,13 @@ export const AboutSection = () => {
   return (
     <div className="h-full w-full flex flex-col justify-center">
       <motion.h2
-        variants={{
-          hidden: { opacity: 0, x: -100 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        animate={paragraphContainerControls}
-        initial="hidden"
-        transition={{ ease: "easeInOut", duration: 0.3 }}
+        // variants={{
+        //   hidden: { opacity: 0, x: -100 },
+        //   visible: { opacity: 1, x: 0 },
+        // }}
+        // animate={paragraphContainerControls}
+        // initial="hidden"
+        // transition={{ ease: "easeInOut", duration: 0.3 }}
         className="font-display flex flex-col  leading-[90px] text-[108px]"
       >
         <span>Projects</span>
@@ -74,7 +76,7 @@ export const AboutSection = () => {
             variants={paragraphVariants}
             className="mb-[1rem]"
             transition={{
-              delay: 1,
+              delay: 0.3,
               duration: 0.5,
               ease: "easeInOut",
             }}
@@ -84,9 +86,9 @@ export const AboutSection = () => {
           <motion.p
             variants={paragraphVariants}
             transition={{
-              delay: 1.5,
+              delay: 0.8,
               duration: 0.5,
-              ease: "easeIn",
+              ease: "easeInOut",
             }}
           >
             Мы специализируемся на работе с лидерами мнений, креаторами,
@@ -111,7 +113,7 @@ export const AboutSection = () => {
               default: {
                 duration: 0.5,
                 ease: "easeInOut",
-                delay: 0.5,
+                delay: 0,
               },
             }}
             d="M988.8 196.944C995.539 223.952 988.901 252.986 971.035 282.395C953.168 311.806 924.092 341.557 886.034 369.957C809.919 426.756 697.961 478.091 568.199 510.474C438.438 542.857 315.487 550.145 221.611 535.769C174.671 528.581 135.025 515.98 105.435 498.412C75.8459 480.845 56.3437 458.335 49.6037 431.327C42.8638 404.32 49.5027 375.286 67.3682 345.876C85.2351 316.465 114.311 286.714 152.37 258.314C228.484 201.515 340.443 150.181 470.204 117.798C599.966 85.4148 722.916 78.1262 816.793 92.5025C863.732 99.6908 903.378 112.292 932.969 129.86C962.557 147.426 982.06 169.937 988.8 196.944Z"

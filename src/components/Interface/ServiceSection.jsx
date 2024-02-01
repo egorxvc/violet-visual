@@ -1,7 +1,19 @@
+import {useRef} from "react";
+import {useScroll} from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
+
 export const ServiceSection = () => {
+  const containerRef = useRef();
+
+  const data = useScroll()
+  useFrame((state, delta, frame) => {
+    const opacity = 1 - data.range(2.75/data.pages, 0.25/data.pages);
+    containerRef.current.style.opacity = opacity
+    console.log(opacity);
+  })
   return (
     <>
-      <div className="flex flex-col justify-center justify-items-center h-full">
+      <div className="flex flex-col justify-center justify-items-center h-full" ref={containerRef}>
         <h2 className="font-display text-5xl uppercase text-center mb-32">
           Наши Услуги
         </h2>

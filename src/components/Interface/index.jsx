@@ -22,21 +22,6 @@ export const Section = (props) => {
 };
 
 export const Interface = () => {
-    const scroll = useScroll();
-
-    useFrame(() => {
-        if (scroll.range(3/7, 4/7) > 0) {
-            document.body.className = "bg-black text-white";
-            // document.body.className = "";
-        } else {
-            document.body.className = "bg-white text-black";
-        }
-
-        if (scroll.range(5/7, 1) > 0) {
-            document.body.className = "bg-white text-black";
-        }
-    })
-
   return (
     <motion.div className="flex flex-col items-center w-screen">
       <Section>

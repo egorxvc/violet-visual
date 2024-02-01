@@ -1,7 +1,27 @@
+import {motion} from "framer-motion";
+import {useRef} from "react";
+import {useScroll} from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
+
 export const AdvertiseSection = () => {
+  const containerRef = useRef();
+  const data = useScroll()
+  useFrame((state, delta, frame) => {
+    const range = data.range(2/data.pages, 1.5/data.pages);
+    const range2 = data.range(4.5/data.pages, 1/data.pages);
+    // containerRef.current.style.opacity = range;
+    // Изменяем цвет фона в зависимости от позиции скролла
+    document.body.style.backgroundColor = `rgb(${255 - range * 255}, ${255 - range * 255}, ${255 - range * 255})`;
+    document.body.style.color = `rgb(${range * 255}, ${range * 255}, ${range * 255})`;
+
+    if (range2 > 0) {
+      document.body.style.backgroundColor = `rgb(${range2 * 255}, ${range2 * 255}, ${range2 * 255})`;
+      document.body.style.color = `rgb(${255 - range2 * 255}, ${255 - range2 * 255}, ${255 - range2 * 255})`;
+    }
+  })
   return (
     <>
-      <div className="flex flex-col justify-center justify-items-center h-full w-full">
+      <div ref={containerRef} className="flex flex-col justify-center justify-items-center h-full w-full">
         <h2 className="font-display text-5xl mb-3">
           Рекламное размещение у блогеров
         </h2>
@@ -11,37 +31,37 @@ export const AdvertiseSection = () => {
           узнаваемости вашего бренда и продуктов.
         </p>
         <div className="flex flex-col gap-3">
-          <AdvertiseCard className="w-7/12">
-            Подбор популярных блогеров. Мы поможем выбрать блогеров, чей контент
-            соответствует вашей целевой аудитории и ценностям бренда.
-          </AdvertiseCard>
-          <AdvertiseCard className="ml-auto w-10/12">
-            Поможем разработать креативное рекламное содержание, которое будет
-            наиболее эффективно сочетаться с контентом блогера.
-          </AdvertiseCard>
-          <AdvertiseCard className="w-8/12">
-            Отслеживание и отчетность: Мы следим за результатами и предоставляем
-            подробные отчеты о реакции аудитории на рекламу у блогеров.
-          </AdvertiseCard>
-          <AdvertiseCard className="ml-auto w-6/12">
-            Анализируем результаты и вносим коррективы для максимизации
-            эффективности рекламной кампании.
-          </AdvertiseCard>
+          <motion.div className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black transition`}
+          >
+            <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
+              Подбор популярных блогеров. Мы поможем выбрать блогеров, чей
+              контент соответствует вашей целевой аудитории и ценностям бренда.
+            </p>
+          </motion.div>
+          <div
+              className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black transition`}
+          >
+            <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
+              Поможем разработать креативное рекламное содержание, которое будет
+              наиболее эффективно сочетаться с контентом блогера.
+            </p>
+          </div>
+          <div
+              className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black transition`}
+          >
+            <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
+              Отслеживание и отчетность: Мы следим за результатами и предоставляем подробные отчеты о реакции аудитории на рекламу у блогеров.
+            </p>
+          </div>
+          <div
+              className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black transition`}
+          >
+            <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
+              Анализируем результаты и вносим коррективы для максимизации
+              эффективности рекламной кампании.
+            </p>
+          </div>
         </div>
-      </div>
-    </>
-  );
-};
-
-export const AdvertiseCard = ({ children, className }) => {
-  return (
-    <>
-      <div
-        className={`flex w-8/12 flex-1 p-[3px] min-h-16 border-[3px] border-begonia backdrop-blur-md bg-opacity-25 bg-black ${className}`}
-      >
-        <p className="py-2 px-4 bg-clip-text text-transparent bg-gradient-to-br from-begonia to-infra-red">
-          {children}
-        </p>
       </div>
     </>
   );

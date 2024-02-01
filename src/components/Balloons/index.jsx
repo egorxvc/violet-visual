@@ -15,18 +15,18 @@ export const Balloons = ({ mouse }) => {
 
   useFrame((state, delta) => {
     const rAll = scroll.range(0, 1);
-    const r0 = scroll.range(0, 0);
+    const r0 = scroll.range(0, 1/scroll.pages);
     const r1 = scroll.range(1/scroll.pages, 1/scroll.pages);
-    const r2 = scroll.range(2/scroll.pages, 2/scroll.pages);
-    const r3 = scroll.range(3/scroll.pages, 3/scroll.pages);
-    const r4 = scroll.range(4/scroll.pages, 3/scroll.pages);
-    const r5 = scroll.range(5/scroll.pages, 5/scroll.pages);
-    const r6 = scroll.range(6/scroll.pages, 6/scroll.pages);
-    const r7 = scroll.range(7/scroll.pages, 7/scroll.pages);
+    const r2 = scroll.range(2/scroll.pages, 1/scroll.pages);
+    const r3 = scroll.range(3/scroll.pages, 1/scroll.pages);
+    const r4 = scroll.range(4/scroll.pages, 1/scroll.pages);
+    const r5 = scroll.range(5/scroll.pages, 1/scroll.pages);
+    const r6 = scroll.range(6/scroll.pages, 1/scroll.pages);
+    const r7 = scroll.range(7/scroll.pages, 1/scroll.pages);
 
     groupRef.current.position.x = THREE.MathUtils.damp(
         groupRef.current.position.x,
-        (-5 * r1) + (5 * r2),
+        (-5 * r1),
         4,
         delta,
     );
